@@ -1,0 +1,24 @@
+.mainContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+
+}
+.imageContainer{
+    margin: 0 auto;
+}
+.infoContainer {
+    margin: 0 auto;
+}
+.name {
+    text-align: center;
+}
+.infoIcons {
+    margin-left: 15px
+}
+.personAvatar {
+    border: #aee0f5 solid 3px;
+    border-radius: 50%;
+    width: 150px;
+}
