@@ -43,13 +43,15 @@ class SingleUser extends Component {
                         <h2>{this.state.userName.first}</h2>
                         <h3>{this.state.userName.last}</h3>
                     </div>
-        <div className={styles.contactInfo}></div>
+                
                     <Route path='/' component={ContactInfo} />
-
+                    <div className={styles.dataRes}>
                     <Route path='/email' component={EmailData} />
                     <Route path='/adress' component={AdressData} />
                     <Route path='/phone' component={PhoneData} />
-
+                    </div>
+                    
+                
                 </div>
 
             </div>

@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-
+    align-items: center;
 
 }
 .imageContainer{
@@ -10,6 +10,8 @@
 }
 .infoContainer {
     margin: 0 auto;
+    border: #677277 solid 3px;
+    border-radius: 4%;
 }
 .name {
     text-align: center;
@@ -18,7 +20,15 @@
     margin-left: 15px
 }
 .personAvatar {
-    border: #aee0f5 solid 3px;
+    border: #677277 solid 3px;
     border-radius: 50%;
     width: 150px;
+}
+.contactInfo {
+    display: flex;
+margin: 0 auto;
+}
+.dataRes {
+    text-align: center;
+    margin: 0 7px 0 7px;
 }
