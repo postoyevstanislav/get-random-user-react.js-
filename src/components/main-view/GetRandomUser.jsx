@@ -13,7 +13,8 @@ class SingleUser extends Component {
         super(props);
         this.state = {
             userPicture: null,
-            userName: ''
+            userName: '',
+            loading: true
         }
         this.getUser()
     }
@@ -24,13 +25,20 @@ class SingleUser extends Component {
         const myData = data.results[0]
         this.setState({
             userName: myData.name,
-            userPicture: myData.picture.large
+            userPicture: myData.picture.large,
+            loading: false
         })
 
     }
 
     render() {
-
+        if(this.state.loading) {
+            return (
+                <>
+                    <h1>Waiting for response from server..</h1>
+                </>
+            )
+        }
         return (
             <div className={styles.mainContainer}>
                 <div className={styles.imageContainer}>
