@@ -1,10 +1,12 @@
 import React, {Component} from "react";
+import Spinner from "../spinner/spinner";
 
 class EmailData extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            userEmail: ''
+            userEmail: '',
+            loading: true
 
 
         }
@@ -17,12 +19,15 @@ class EmailData extends Component {
         const myData = data.results[0]
         this.setState({
             userEmail: myData.email,
-
+            loading: false
         })
 
     }
 
     render() {
+        if (this.state.loading) {
+            return  <Spinner/>
+        }
         return (
             <div>
                 <h4>{this.state.userEmail}</h4>

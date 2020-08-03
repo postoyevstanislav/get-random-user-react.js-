@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Spinner from "../spinner/spinner";
 
 class AdressData extends Component {
     constructor(props) {
@@ -6,7 +7,8 @@ class AdressData extends Component {
         this.state = {
             userCountry: '',
             userCity: '',
-            userStreet: ''
+            userStreet: '',
+            loading: true
 
         }
         this.getUser()
@@ -17,15 +19,17 @@ class AdressData extends Component {
         const data = await response.json()
         const myData = data.results[0]
         this.setState({
-
             userCountry: myData.location.country,
             userCity: myData.location.city,
-            userStreet: myData.location.street.name
+            userStreet: myData.location.street.name,
+            loading: false
         })
 
     }
-
     render() {
+        if(this.state.loading) {
+            return <Spinner/>
+        }
         return (
             <div>
                 <h4>{this.state.userCountry}, {this.state.userCity}, {this.state.userStreet} street</h4>

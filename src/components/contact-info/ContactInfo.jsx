@@ -7,11 +7,6 @@ import PhoneLogo from   '../icons/phone.png'
 
 
 class ContactInfo extends Component {
-    constructor(props) {
-        super(props);
-        
-
-    }
 
     render() {
         return (

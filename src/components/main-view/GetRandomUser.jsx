@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import styles from './GetRandomUser.module.css'
-import {Link, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import ContactInfo from "../contact-info/ContactInfo";
 import EmailData from "../email-data/EmailData";
 import AdressData from "../adress-data/AdressData";
@@ -13,9 +13,7 @@ class SingleUser extends Component {
         super(props);
         this.state = {
             userPicture: null,
-            userName: '',
-
-
+            userName: ''
         }
         this.getUser()
     }
@@ -26,13 +24,13 @@ class SingleUser extends Component {
         const myData = data.results[0]
         this.setState({
             userName: myData.name,
-            userPicture: myData.picture.large,
-
+            userPicture: myData.picture.large
         })
 
     }
 
     render() {
+
         return (
             <div className={styles.mainContainer}>
                 <div className={styles.imageContainer}>
